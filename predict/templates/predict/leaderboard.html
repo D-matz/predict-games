@@ -1,0 +1,24 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'predict/style.css' %}">
+
+
+<body>
+<table id=leaderboard>
+  <tr>
+    <th>User</th>
+    <th>Correct</th>
+    <th>Incorrect</th>
+    <th>% Correct</th>
+    <th>Prediction skill</th>
+  </tr>
+  {% for u in userlist %}
+      <tr>
+          <td>{{u.username|safe}}</td>
+          <td>{{u.guesses_right|safe}}</td>
+          <td>{{u.guesses_wrong|safe}}</td>
+          <td>{{u.correctRate|safe}}</td>
+          <td>{{u.prediction_skill|safe}}</td>
+      </tr>
+  {% endfor %}
+</table>
+</body>

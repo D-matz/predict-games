@@ -24,7 +24,17 @@ def register(request):
     return render(request, 'predict/register.html', {'form': f})
 
 def leaderboard(request):
-    return render(request, 'predict/about.html')
+    top_ten = MyUser.objects.order_by('-guesses_right')[:10]
+    for u in top_ten:
+        numgames = u.guesses_right + u.guesses_wrong
+        if numgames > 0:
+            u.correctRate = u.guesses_right/(numgames)
+        else:
+            u.correctRate = 0
+    context = {
+        "userlist": top_ten
+    }
+    return render(request, 'predict/leaderboard.html', context)
 
 def about(request):
     return render(request, 'predict/about.html')

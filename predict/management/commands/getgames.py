@@ -4,7 +4,7 @@ import requests
 import time
 import glob
 
-api_key = 'RGAPI-5ff5bccf-8e64-4a8e-9c18-5ffb4eefa46b'
+api_key = 'oops'
 
 
 def setgame(pnum, g, name, champ, kills, deaths, assists, gold, level, runePrimary, runeSecondary, items, summonerD, summonerF):
