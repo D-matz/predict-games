@@ -1,0 +1,71 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'predict/style.css' %}">
+
+
+
+<body>
+<ul class="myul">
+  <li class="myli">
+    <div class="topleft">
+      {% if user.is_authenticated %}
+      guesses right: {{ guessRight }}<br>
+      guesses wrong: {{ guessWrong }}<br>
+      {% endif %}
+    </div>
+  </li>
+  <li class="myli">
+    <table class="center">
+      <br>
+      <tr><div class="centerText">Guess which team wins</div><tr>
+      <tr>
+        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName0 }}.Png" alt="{{ new_game.champName0 }}"></td>
+        <td></td>
+        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName5 }}.Png" alt="{{ new_game.champName5 }}"></td>
+      </tr>
+      <tr>
+        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName1 }}.Png" alt="{{ new_game.champName1 }}"></td>
+        <td></td>
+        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName6 }}.Png" alt="{{ new_game.champName6 }}"></td>
+      </tr>
+      <tr>
+        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName2 }}.Png" alt="{{ new_game.champName2 }}"></td>
+        <td class="pad">vs</td>
+        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName7 }}.Png" alt="{{ new_game.champName7 }}"></td>
+      </tr>
+      <tr>
+        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName3 }}.Png" alt="{{ new_game.champName3 }}"></td>
+        <td></td>
+        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName8 }}.Png" alt="{{ new_game.champName8 }}"></td>
+      </tr>
+      <tr>
+        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName4 }}.Png" alt="{{ new_game.champName4 }}"></td>
+        <td></td>
+        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName9 }}.Png" alt="{{ new_game.champName9 }}"></td>
+      </tr>
+      <tr>
+        <td><a href="http://127.0.0.1:8000/predict/{{ new_game.id }}/1/0/0" class="button-85">predict win:<br>{{ new_game.champName0 }}<br>{{ new_game.champName1 }}<br>{{ new_game.champName2 }}<br>{{ new_game.champName3 }}<br>{{ new_game.champName4 }}</a></td>
+        <td></td>
+        <td><a href="http://127.0.0.1:8000/predict/{{ new_game.id }}/0/0/0" class="button-85">predict win:<br>{{ new_game.champName5 }}<br>{{ new_game.champName6 }}<br>{{ new_game.champName7 }}<br>{{ new_game.champName8 }}<br>{{ new_game.champName9 }}</a></td>
+      </tr>
+    </table>
+  </li>
+  <li class="myli">
+    <div class="topright">
+    {% if user.is_authenticated %}
+    <a href="{% url 'logout'%}?next={{request.path}}" class="button-4" role="button">Logout</a>
+    <br>{{ user.get_username }}
+    {% else %}
+    <a href="{% url 'login'%}?next={{request.path}}" class="button-4" role="button">Login</a>
+    {% endif %}
+    <br>
+    <br>
+    <a href="{% url 'register'%}">register</a>
+    <br>
+    <a href="{% url 'leaderboard'%}">leaderboard</a>
+    <br>
+    <a href="{% url 'about'%}">about</a>
+    <br>
+    <a href="https://www.youtube.com/watch?v=WIOh512j8XM">♫ unknown damage ♫</a>
+    </div>
+  </li class="myli">
+</ul>

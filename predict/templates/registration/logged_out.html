@@ -1,0 +1,7 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'predict/style.css' %}">
+
+{% block content %}
+  <p>Logged out!</p>
+  <a href="{% url 'login'%}">Click here to login again.</a>
+{% endblock %}
