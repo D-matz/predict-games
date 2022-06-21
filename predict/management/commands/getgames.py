@@ -236,5 +236,5 @@ class Command(BaseCommand):
                     g = setgame(playernum, g, name, champ, kills, deaths, assists, gold, level, runePrimary, runeSecondary, items, sum1, sum2)
                     #print(name, champ, kills, deaths, assists, gold, level, runePrimary, runeSecondary, items)
                 print(g.level0, g.teamOneWin)
-                print("save?", g.runeSecondary0)
+                g.seen_before = False
                 g.save()

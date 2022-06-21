@@ -18,6 +18,8 @@ class Game(models.Model):
     match_id = models.CharField(max_length=14)
     match_date = models.CharField(max_length=13)
     teamOneWin = models.BooleanField()
+    seen_before = models.BooleanField()
+    seen_by_one = models.BooleanField()
 
     name0 = models.CharField(max_length=16)
     champName0 = models.CharField(max_length=16)
