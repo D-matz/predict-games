@@ -1,4 +1,5 @@
 {% load static %}
+{% static "" as staticURL %}
 <link rel="stylesheet" type="text/css" href="{% static 'predict/style.css' %}">
 
 
@@ -18,34 +19,34 @@
       <br>
       <tr><div class="centerText">Guess which team wins</div><tr>
       <tr>
-        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName0 }}.Png" alt="{{ new_game.champName0 }}"></td>
+        <td><img src="{{ staticURL }}predict/Champion/{{ new_game.champName0 }}.Png" alt="{{ new_game.champName0 }}"></td>
         <td></td>
-        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName5 }}.Png" alt="{{ new_game.champName5 }}"></td>
+        <td><img src="{{ staticURL }}predict/Champion/{{ new_game.champName5 }}.Png" alt="{{ new_game.champName5 }}"></td>
       </tr>
       <tr>
-        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName1 }}.Png" alt="{{ new_game.champName1 }}"></td>
+        <td><img src="{{ staticURL }}predict/Champion/{{ new_game.champName1 }}.Png" alt="{{ new_game.champName1 }}"></td>
         <td></td>
-        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName6 }}.Png" alt="{{ new_game.champName6 }}"></td>
+        <td><img src="{{ staticURL }}predict/Champion/{{ new_game.champName6 }}.Png" alt="{{ new_game.champName6 }}"></td>
       </tr>
       <tr>
-        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName2 }}.Png" alt="{{ new_game.champName2 }}"></td>
+        <td><img src="{{ staticURL }}predict/Champion/{{ new_game.champName2 }}.Png" alt="{{ new_game.champName2 }}"></td>
         <td class="pad">vs</td>
-        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName7 }}.Png" alt="{{ new_game.champName7 }}"></td>
+        <td><img src="{{ staticURL }}predict/Champion/{{ new_game.champName7 }}.Png" alt="{{ new_game.champName7 }}"></td>
       </tr>
       <tr>
-        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName3 }}.Png" alt="{{ new_game.champName3 }}"></td>
+        <td><img src="{{ staticURL }}predict/Champion/{{ new_game.champName3 }}.Png" alt="{{ new_game.champName3 }}"></td>
         <td></td>
-        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName8 }}.Png" alt="{{ new_game.champName8 }}"></td>
+        <td><img src="{{ staticURL }}predict/Champion/{{ new_game.champName8 }}.Png" alt="{{ new_game.champName8 }}"></td>
       </tr>
       <tr>
-        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName4 }}.Png" alt="{{ new_game.champName4 }}"></td>
+        <td><img src="{{ staticURL }}predict/Champion/{{ new_game.champName4 }}.Png" alt="{{ new_game.champName4 }}"></td>
         <td></td>
-        <td><img src="http://127.0.0.1:8000/static/predict/Champion/{{ new_game.champName9 }}.Png" alt="{{ new_game.champName9 }}"></td>
+        <td><img src="{{ staticURL }}predict/Champion/{{ new_game.champName9 }}.Png" alt="{{ new_game.champName9 }}"></td>
       </tr>
       <tr>
-        <td><a href="http://127.0.0.1:8000/predict/{{ new_game.id }}/1/0/0" class="button-85">predict win:<br>{{ new_game.champName0 }}<br>{{ new_game.champName1 }}<br>{{ new_game.champName2 }}<br>{{ new_game.champName3 }}<br>{{ new_game.champName4 }}</a></td>
+        <td><a href="{% url 'guess1'%}{{ new_game.id }}/1/0/0" class="button-85">predict win:<br>{{ new_game.champName0 }}<br>{{ new_game.champName1 }}<br>{{ new_game.champName2 }}<br>{{ new_game.champName3 }}<br>{{ new_game.champName4 }}</a></td>
         <td></td>
-        <td><a href="http://127.0.0.1:8000/predict/{{ new_game.id }}/0/0/0" class="button-85">predict win:<br>{{ new_game.champName5 }}<br>{{ new_game.champName6 }}<br>{{ new_game.champName7 }}<br>{{ new_game.champName8 }}<br>{{ new_game.champName9 }}</a></td>
+        <td><a href="{% url 'guess1'%}{{ new_game.id }}/0/0/0" class="button-85">predict win:<br>{{ new_game.champName5 }}<br>{{ new_game.champName6 }}<br>{{ new_game.champName7 }}<br>{{ new_game.champName8 }}<br>{{ new_game.champName9 }}</a></td>
       </tr>
     </table>
   </li>
